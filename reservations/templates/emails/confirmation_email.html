@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background-color: #b4ddd4;
+            color: #e67070;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hello {{ reservation.user.first_name }},</h2>
+    <p>Your reservation for <strong>Room {{ reservation.room.name }}</strong> has been confirmed.</p>
+
+    <p><strong>Date:</strong> {{ reservation.start_time|date:"F d, Y" }}<br>
+    <strong>Time:</strong> {{ reservation.start_time|time }} – {{ reservation.end_time|time }}</p>
+
+    <p>We look forward to seeing you!</p>
+
+    <a href="http://127.0.0.1:8000/myReservations/" class="button">View My Reservations</a>
+
+    <p>Thanks,<br>The Conference Room Team</p>
+</body>
+</html>
